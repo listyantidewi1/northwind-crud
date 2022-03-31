@@ -93,47 +93,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/login.css">
-    <title>LOGIN</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font: 14px sans-serif;
+        }
+
+        .wrapper {
+            width: 360px;
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <section class="vh-100 gradient-custom">
-        <div class="card">
-            <?php
+    <div class="wrapper">
+        <h2>Login</h2>
+        <p>Please fill in your credentials to login.</p>
+
+        <?php
         if (!empty($login_err)) {
             echo '<div class="alert alert-danger">' . $login_err . '</div>';
         }
         ?>
-            <div class="card-title">
-                <h2>LOGIN</h2>
-                <div class="underline-text"></div>
-            </div>
-            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form">
-                <label for="username">
-                    &nbsp;Username
-                </label>
+
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
-                <input id="username" class="form-content <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
-                    value="<?php echo $username; ?>" type="username" name="username" required />
-                <label for="password" style="margin-top:4%;">
-                    &nbsp;Password
-                </label>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
-                <input id="password" class="form-content <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>"
-                    type="password" name="password" required />
-                <a href="">
-                    <legend class="forgot-pass">Forgot Password?</legend>
-                </a>
-                <input class="submit-btn" type="submit" name="submit" value="LOGIN">
-                <a href="register.php" class="sign-up">Don't have account yet? <span style="color:red">Sign
-                        Up</span></a>
-            </form>
-        </div>
-    </section>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Login">
+            </div>
+            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+        </form>
+    </div>
 </body>
 
 </html>

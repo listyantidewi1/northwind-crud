@@ -43,7 +43,7 @@ require_once "connect.php"
                     <h1>MAIN NAVIGATION</h1>
                 </div>
                 <li>
-                    <a href="" class="active"><span class="las la-tachometer-alt"></span>
+                    <a href="index.php" ><span class="las la-tachometer-alt"></span>
                         <span>Dashboard</span></a>
                 </li>
                 <li>
@@ -55,7 +55,7 @@ require_once "connect.php"
                         <span>Products</span></a>
                 </li>
                 <li>
-                    <a href="orders.php"><span class="las la-clipboard-list"></span>
+                    <a href="orders.php" class="active"><span class="las la-clipboard-list"></span>
                         <span>Orders</span></a>
                 </li>
             </ul>
@@ -80,53 +80,7 @@ require_once "connect.php"
         </header>
 
         <main>
-            <div class="cards">
-                <div class="card">
-                    <div>
-                        <h1>
-                        <?php $sql = "SELECT * from customers ";
-                         $result = $conn->query($sql);
-                         $rowcount = mysqli_num_rows($result);
-                         printf($rowcount);              
-                         ?>
-                         </h1>
-                        <h2>Customers</h2>
-                        <span>Menampilkan data pembeli</span>
-                    </div>
-                    <div>
-                        <img src="img/customer.png">
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <h1><?php $sql = "SELECT * from orders ";
-                         $result = $conn->query($sql);
-                         $rowcount = mysqli_num_rows($result);
-                         printf($rowcount);              
-                         ?></h1>
-                        <h2>Orders</h2>
-                        <span>Menampilkan data penjualan</span>
-                    </div>
-                    <div>
-                        <img src="img/shopping-cart.png">
-                    </div>
-                </div>
-                <div class="card">
-                    <div>
-                        <h1><?php $sql = "SELECT * from products ";
-                         $result = $conn->query($sql);
-                         $rowcount = mysqli_num_rows($result);
-                         printf($rowcount);              
-                         ?></h1>
-                        <h2>Products</h2>
-                        <span>Menampilkan data barang</span>
-                    </div>
-                    <div>
-                        <img src="img/product.png">
-                    </div>
-                </div>
-            </div>
+            
         </main>
     </div>
 </body>

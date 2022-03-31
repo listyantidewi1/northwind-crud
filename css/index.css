@@ -1,0 +1,177 @@
+:root{
+    --main-color: #232B1F;
+    --sec-color: #303A2B;
+
+    font-family: 'Raleway', sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.sidebar{
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 364px;
+    height: 100%;
+    background: var(--main-color);
+}
+
+.sidebar-brand {
+    padding: 1.5rem 25% 0rem 25%;
+    display: flex;
+}
+
+.sidebar-brand img{
+    width: 45px;
+    height: 45px; margin-right: 1rem;
+}
+
+.user-wrapper{
+    margin-top:3rem;
+    margin-left:3rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.user-wrapper img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 25px;
+}
+
+.main-navigation{
+    margin-top: 40px;
+    background: #454F40;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+    margin-bottom: 40px;
+}
+
+.sidebar-menu a span{
+    font-size: 1.5rem; 
+    padding-left: 1.5rem;
+}   
+
+.sidebar-menu li{
+    width:100%;
+    margin-bottom: 2rem;
+    padding-left: 3rem;
+}
+
+.sidebar-menu a{
+    color: white;
+    display: block;
+}       
+
+.sidebar-menu a.active{
+    background: white;
+    color: black;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 30px 0px 0px 30px;
+}
+
+.main-content{
+    margin-left: 364px;
+}
+
+header{
+    padding: 1rem;
+    color: white;
+    background: var(--sec-color);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-content h1{
+    font-size: 27pt;
+}
+
+.search-wrapper{
+    margin-left: -39%;
+    overflow: hidden;
+    border-radius: 30px;
+    border: none;
+    display: flex;
+}
+
+.search-wrapper input{
+    padding-left: 1rem;
+    border: none;
+    outline: none;
+    font-size: 16pt;
+    height: 100%;
+    width: 38rem;
+}
+
+.search-wrapper span{
+    padding-top:5px;
+    font-size: 20pt;
+    color: black;
+    width: 40px;
+    overflow: hidden;
+    background: white;
+    padding-right: 1rem;
+}
+
+.log-out{
+    padding-top:6px;
+    padding-right: 1rem;
+    font-size: 17pt;
+    color: white;
+    display: flex;
+}
+
+.log-out:hover{
+    color: red;
+}
+
+.log-out span{
+    margin-top: 3px;
+    margin-left: 10px;
+}
+
+main{
+    background: url("../img/background.jpg");
+    height: calc(100vh - 90px);
+    background-size: cover;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 2rem;
+}
+
+.card{
+    background: white;
+    color: black;
+    display: flex;
+    padding: 40px;
+    margin: 100px 90px 0px 90px;
+    border-radius: 40px;
+    justify-content: space-around;
+}
+
+.card img{
+    width: 140px;
+    height: 140px;
+}
+
+.card h1{
+    font-size: 30pt;
+}
+
+.card h2{
+    margin-top: 40px;
+}

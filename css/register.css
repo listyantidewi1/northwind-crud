@@ -1,0 +1,86 @@
+body{
+    background: linear-gradient(180deg, #37C46F 0%, #97F079 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+}
+.card{
+    align-items: center;
+    width: 591px;
+    height: 649px;
+    left: 35%;
+    top: 15%;
+    background: #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 11px;
+}
+.card-title{    
+    margin:10%;
+    text-align: center;
+}
+h2{
+
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: #FFFFFF;
+}
+.underline-text{
+    align-items: center;
+    margin: 16% auto auto auto;
+    width: 131.02px;
+    height: 4px;
+    background: linear-gradient(180deg, #37C46F 0%, #97F079 100%);
+}
+label{
+    color: white;
+    font-size: 16pt;
+}
+form{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.form-content{
+    margin: 3%;
+    text-align: center;
+    background: linear-gradient(90deg, #37C46F 16.49%, #97F079 87.19%);
+    border-radius: 95px;
+    width: 363px;
+    height: 47px;
+}
+.forgot-pass{
+    margin-left:-80%;
+    color: white;
+    font-weight: 400;
+    font-size: 11pt;
+    line-height: 15pt;
+}
+.forgot-pass:hover{
+    color: red;
+}
+.submit-btn{
+    margin-top: 15%;
+    font-size: 16pt;
+    font-weight: 700;
+    width: 173px;
+    height: 48px;
+    background: #85FF50;
+    border-radius: 70px;
+}
+.submit-btn:hover{
+    color: white;
+    background: black;
+}
+.sign-up{
+    margin-top:2%;
+    color:white;
+    font-size: 13pt;
+}
+.sign-up:hover{
+    color: aquamarine;
+}
+a{
+    text-decoration: none;
+}
