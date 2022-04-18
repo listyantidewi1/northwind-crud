@@ -1,0 +1,90 @@
+a{
+    text-decoration: none;
+}
+
+body {
+    background: -webkit-linear-gradient(bottom, #a6f77b,#2dbd6e);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+label {
+    font-family: "Roboto", sans-serif;
+    font-size: 14pt;
+  }
+.card{
+    background: #000000;
+    border-radius: 8px;
+    box-shadow: 1px 2px 8px rgba(255, 255, 255, 0.65);
+    height: 520px;
+    margin: 3% auto auto;
+    width: 520px;
+}
+.card-content{
+    padding: 12px 44px;
+}
+.card-title{
+    text-align: center;
+    letter-spacing: 4px;
+    font-family: 'Roboto', sans-serif;
+    color:rgba(255, 255, 255, 1);;
+}
+.form{
+    align-items: left;
+    display:flex;
+    flex-direction: column;
+}
+.form-border {
+    background: -webkit-linear-gradient(right, #a6f77b, #2ec06f);
+    height: 1px;
+    width: 100%;
+  }
+  #forgot-pass {
+    color: #2dbd6e;
+    font-family: "Raleway", sans-serif;
+    font-size: 10pt;
+    margin-top: 3px;
+    text-align: right;
+  }
+.form-content{ 
+    align-items: right;
+    display: fixed;
+    background: -webkit-linear-gradient(right, #a6f77b, #2ec06f);
+    border: none;
+    border-radius: 21px;
+    box-shadow: 0px 1px 8px #24c64f;
+    color: -webkit-linear-gradient(right, #060805, #ce0f5f);
+    height: 42px;
+    margin: 0 auto auto auto;
+    transition: 0.25s;
+    width: 20rem;
+    
+}
+.underline-title {
+    background: -webkit-linear-gradient(right, #a6f77b, #2ec06f);
+    height: 2px;
+    margin: 1.1rem auto 0 auto;
+    width: 89px;
+}
+#submit-btn {
+    background: -webkit-linear-gradient(right, #a6f77b, #2dbd6e);
+    border: none;
+    border-radius: 21px;
+    box-shadow: 0px 1px 8px #24c64f;
+    cursor: pointer;
+    color: white;
+    font-family: "Raleway SemiBold", sans-serif;
+    height: 42.3px;
+    margin: 0 auto;
+    margin-top: 50px;
+    transition: 0.25s;
+    width: 153px;
+  }
+  #submit-btn:hover {
+    box-shadow: 0px 1px 18px #24c64f;
+  }
+  #sign-up {
+    color: #2dbd6e;
+    font-size: 8pt;
+    margin-top: 10px;
+    text-align: center;
+  }

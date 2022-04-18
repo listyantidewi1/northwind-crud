@@ -33,6 +33,7 @@ require_once "connect.php"
             <ul>
                 <div class="user-wrapper">
                     <img src="img/user.png">
+                    
                     <div>
                         <h1>WELCOME</h1>
                         <h2><?php echo ucfirst($_SESSION["username"]); ?></h2>

@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate credentials
     if (empty($username_err) && empty($password_err)) {
         // Prepare a select statement
-        $sql = "SELECT id, username, password FROM users WHERE username = ?";
+        $sql = "SELECT id, username, password, level FROM users WHERE username = ?";
 
         if ($stmt = $conn->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
@@ -52,19 +52,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Check if username exists, if yes then verify password
                 if ($stmt->num_rows == 1) {
                     // Bind result variables
-                    $stmt->bind_result($id, $username, $hashed_password);
+                    $stmt->bind_result($id, $username, $hashed_password, $level);
                     if ($stmt->fetch()) {
                         if (password_verify($password, $hashed_password)) {
                             // Password is correct, so start a new session
-                            session_start();
 
-                            // Store data in session variables
-                            $_SESSION["loggedin"] = true;
-                            $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;
+                            if ($level == "admin") {
+                                session_start();
+                                // Store data in session variables
+                                $_SESSION["loggedin"] = true;
+                                $_SESSION["id"] = $id;
+                                $_SESSION["username"] = $username;
+                                $_SESSION["level"] = $level;
 
-                            // Redirect user to welcome page
-                            header("location: index.php");
+                                // Redirect user to welcome page
+                                header("location: index.php");
+                            } else {
+                                session_start();
+                                // Store data in session variables
+                                $_SESSION["loggedin"] = true;
+                                $_SESSION["id"] = $id;
+                                $_SESSION["username"] = $username;
+                                $_SESSION["level"] = $level;
+
+                                // Redirect user to welcome page
+                                header("location: homepage.php");
+                            }
                         } else {
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password.";
@@ -88,6 +101,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -104,10 +119,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <section class="vh-100 gradient-custom">
         <div class="card">
             <?php
-        if (!empty($login_err)) {
-            echo '<div class="alert alert-danger">' . $login_err . '</div>';
-        }
-        ?>
+            if (!empty($login_err)) {
+                echo '<div class="alert alert-danger">' . $login_err . '</div>';
+            }
+            ?>
             <div class="card-title">
                 <h2>LOGIN</h2>
                 <div class="underline-text"></div>
@@ -117,14 +132,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     &nbsp;Username
                 </label>
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
-                <input id="username" class="form-content <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
-                    value="<?php echo $username; ?>" type="username" name="username" required />
+                <input id="username" class="form-content <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" type="username" name="username" required />
                 <label for="password" style="margin-top:4%;">
                     &nbsp;Password
                 </label>
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
-                <input id="password" class="form-content <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>"
-                    type="password" name="password" required />
+                <input id="password" class="form-content <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" type="password" name="password" required />
                 <a href="">
                     <legend class="forgot-pass">Forgot Password?</legend>
                 </a>
